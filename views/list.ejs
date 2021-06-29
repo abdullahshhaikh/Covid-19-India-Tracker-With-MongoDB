@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Tracker</title>
+    <!-- Google Font Link-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Font Awesome Link-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Stylesheet Link-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-div">
+    <h4 class="blink_me" style="color: white;"><span><i class="fas fa-circle" style="color: red;font-size: 15px;"></i ></span> Live</h4>
+    <h1 class="main-heading">Covid-19 India Tracker</h1>
+    <h4 style="color: white;">Last Updated : <%= latestUpdateTime%> <p>(Refresh to see updates)</p></h4>
+</div>
+    <div>
+      <canvas id="myChart" height="400" style="margin: auto;" ></canvas>
+    </div>
+
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ['Total Cases', 'Total Deaths', 'Patients Recovered', 'Total Active', 'Cases Today', 'Death Today'],
+              datasets: [{
+                  label: 'Count in numbers',
+                  data: [<%= noOfCases%>, <%= noOfDeaths %>, <%= noOfRecoveries%>, <%= noOfActiveCases%>, <%= noOfCasesToday%>, <%= noOfDeathsToday%>],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1,
+                  hoverOffset:10,
+                  fill:false
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              },
+              responsive: true,
+              maintainAspectRatio:false
+          }
+      });
+      </script>
+    
+    <div class="container card-main-div">
+        <div class="row">
+          <div class="col">
+            <div class="card card-1" style="width: 20rem;background-color: #3d84b8;">
+                
+                <div class="card-body">
+                  <h5 class="card-title"> <span>TOTAL</span> CASES </h5>
+                  <p class="card-text"> <%= noOfCases%> </p>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card card-2" style="width: 20rem;background-color: #f05945;">
+                
+                <div class="card-body" >
+                  <h5 class="card-title"> <span>TOTAL</span> DEATHS</h5>
+                  <p class="card-text"> <%= noOfDeaths %></p>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card card-3" style="width: 20rem;background-color:#4CCB17">
+                
+                <div class="card-body">
+                  <h5 class="card-title"><span>PATIENTS</span> RECOVERED </h5>
+                  <p class="card-text"> <%= noOfRecoveries%> </p>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card card-cw-1" style="width: 20rem;background-color: #f7a440;">
+                
+                <div class="card-body">
+                  <h5 class="card-title"><span>TOTAL</span> ACTIVE</h5>
+                  <p class="card-text"> <%= noOfActiveCases%> </p>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card card-cw-2" style="width: 20rem;background-color: #cdc733;">
+                
+                <div class="card-body">
+                  <h5 class="card-title"><span>CASES</span> TODAY </h5>
+                  <p class="card-text"> <%= noOfCasesToday%> </p>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card card-cw-3" style="width: 20rem;background-color: #c8c6a7;">
+                
+                <div class="card-body">
+                  <h5 class="card-title"> <span>DEATHS</span> TODAY </h5>
+                  <p class="card-text"><%= noOfDeathsToday%></p>
+                  
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div>
+          <h1 class="name-heading">MADE BY <a href="https://github.com/abdullahshhaikh" style="text-decoration: underline;color: white;">ABDULLAH</a></h1>
+      </div>
+      
+
+</body>
+</html>

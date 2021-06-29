@@ -1,0 +1,114 @@
+body{
+    background-color: #36454F;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+#myChart{
+    width:800px
+}
+.main-div{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.main-heading{
+    text-align:center;
+    color: white;
+}
+
+.card-main-div{
+    margin-top: 50px;
+}
+
+.card-body{
+    text-align: center;
+    color: white;
+}
+
+.card{
+    width:150px;
+    height:150px;
+    background:#48e;
+    -webkit-transition: 0.5s;
+            transition: 0.5s;
+            font-size: 50px;
+            text-shadow: 0 1px 0px #242526, 1px 0 0px #242526, 1px 2px 1px #242526, 2px 1px 1px #242526, 2px 3px 2px #242526, 3px 2px 2px #242526, 3px 4px 2px #242526, 4px 3px 3px #242526, 4px 5px 3px #242526, 5px 4px 2px #242526, 5px 6px 2px #242526, 6px 5px 2px #242526, 6px 7px 1px #242526, 7px 6px 1px #242526, 7px 8px 0px #242526, 8px 7px 0px #242526;
+  }
+  
+  .card:hover{
+    background:#59f;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+
+
+  .card-cw-1,.card-cw-2,.card-cw-3{
+      margin-top: 50px;
+  }
+
+  span{
+      font-size: 30px;
+  }
+
+  h5{
+      font-size: 30px;
+  }
+
+  .blink_me {
+    animation: blinker 1s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card{
+        margin: auto;
+        margin-left: 20px;
+    }
+
+    /* body{
+        background-color: burlywood;
+        margin: auto;
+    } */
+
+    .card-1{
+        margin: auto;
+    }
+    .card-2,.card-3{
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .card-cw-1,.card-cw-2,.card-cw-3{
+        margin: auto;
+        margin-top: 20px;
+        
+    }
+
+    .card-cw-3{
+        margin: auto;
+        margin:20px auto;
+    }
+
+    .blink_me{
+        /* position: relative;
+        right:20px */
+        margin: auto;
+    }
+
+    #myChart{
+        width: 400px;
+    }
+  }
+
+  .name-heading{
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+  }
